@@ -1,0 +1,550 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    @*<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    @*WebApp全屏模式,隐藏地址栏。*@
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    @*禁止百度转码显示。
+        <meta http-equiv="Cache-Control" content="no-siteapp">*@
+    @*制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        添加到IOS主屏后的标题。
+        <meta name="apple-mobile-web-app-title" content="会议签到管理">*@
+
+    <title>会议评价问卷</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Waves Effect Css -->
+    <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="~/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Colorpicker Css -->
+    <link href="~/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+
+    <!-- Dropzone Css -->
+    <link href="~/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <!-- Multi Select Css -->
+    <link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet" />
+    <!-- Bootstrap Spinner Css -->
+    <link href="~/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <!-- Bootstrap Select Css -->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- noUISlider Css -->
+    <link href="~/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
+
+
+    <!-- Custom Css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="~/css/themes/all-themes.css" rel="stylesheet" />
+    <!-- JQuery DataTable Css -->
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+
+
+    <style>
+        .contentDiv {
+            padding: 80px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body class="theme-black">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/images/logo.png" width="140" height="40" />
+                @*<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>*@
+                @*<a href="javascript:void(0);" class="bars"></a>*@
+                <a class="" style="color: #ffffff; font-size: 16px;margin-left:15px;" href="index.html">|</a>
+                <a class="" style="color: #ffffff; font-weight: bold; font-size: 18px;margin-left:10px;" href="index.html">会议评价问卷</a>
+                @*<a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>*@
+            </div>
+
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    @*<section class="content">*@
+    @*<div class="container-fluid">*@
+    @{
+        <div class="contentDiv">
+            @*<div class="block-header">
+                    <h2>FORM EXAMPLES</h2>
+                </div>*@
+            <!-- Vertical Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        @*<div class="header">
+                                <h2>
+                                    <i class="material-icons">cast</i> <span class="icon-name">会后问卷</span>@ViewData["mID"]
+                                </h2>
+                                <ul class="header-dropdown m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="/HYQD/Index">我发起</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>*@
+                        <div class="body">
+                            <form>
+                                @*<label for="email_address" style="color: #1f91f3;font-size: 1.6rem;">-关于测试会议001</label><br />*@
+                                @*<label for="email_address">填报人姓名</label><span style="color:red;">*</span>
+        <div class="form-group">
+            <div class="form-line">
+                <input type="text" id="UserName" class="form-control" placeholder="请填写姓名...">
+            </div>
+        </div>*@
+
+                                <label for="email_address">1、会议决策<span style="font-weight:lighter">方面存在的问题（多选）：</span></label><span style="color:red;">*</span>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb1_A" class="filled-in chk-col-blue"><label for="cb1_A">A、会议不涉及决策（如选A，BCDE可跳过）</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb1_B" class="filled-in chk-col-blue"><label for="cb1_B">B、会议决策点不明确</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb1_C" class="filled-in chk-col-blue"><label for="cb1_C">C、决策点明确，但未做出决策</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb1_D" class="filled-in chk-col-blue"><label for="cb1_D">D、会下沟通/会签/报批等方式即可决策，无需开会</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb1_E" class="filled-in chk-col-blue"><label for="cb1_E">E、无问题</label>
+                                    </div>
+                                </div>
+                                <label for="email_address">2、会议材料<span style="font-weight:lighter">方面存在的问题（多选）：</span></label><span style="color:red;">*</span>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb2_A" class="filled-in chk-col-blue"><label for="cb2_A">A、材料冗长，问题暴露不充分，行动方案不支撑，资源需求不明确</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb2_B" class="filled-in chk-col-blue"><label for="cb2_B">B、材料未提前24小时定稿、发送</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb2_C" class="filled-in chk-col-blue"><label for="cb2_C">C、会前议题未交圈，材料未预审</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb2_D" class="filled-in chk-col-blue"><label for="cb2_D">D、存在参会人不提前看材料，争论基础信息的现象</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb2_E" class="filled-in chk-col-blue"><label for="cb2_E">E、无问题</label>
+                                    </div>
+                                </div>
+                                <label for="email_address">3、参会人员<span style="font-weight:lighter">方面存在的问题（多选）：</span></label><span style="color:red;">*</span>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb3_A" class="filled-in chk-col-blue"><label for="cb3_A">A、未提前沟通确认，参会范围、层级不合理</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb3_B" class="filled-in chk-col-blue"><label for="cb3_B">B、同一部门（同一专业）超过1人参会</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb3_C" class="filled-in chk-col-blue"><label for="cb3_C">C、议程安排不合理，有多个部门排队等待＞15min的情况</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb3_D" class="filled-in chk-col-blue"><label for="cb3_D">D、无问题</label>
+                                    </div>
+                                </div>
+                                <label for="email_address">4、会议组织<span style="font-weight:lighter">方面存在的问题（多选）：</span></label><span style="color:red;">*</span>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb4_A" class="filled-in chk-col-blue"><label for="cb4_A">A、会议超时＞15min</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb4_B" class="filled-in chk-col-blue"><label for="cb4_B">B、会议时间长，效率低，有较大改进空间</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb4_C" class="filled-in chk-col-blue"><label for="cb4_C">C、存在多平台重复汇报内容</label>
+                                    </div>
+                                    <div class="form-line">
+                                        <input type="checkbox" id="cb4_D" class="filled-in chk-col-blue"><label for="cb4_D">D、无问题</label>
+                                    </div>
+                                </div>
+
+                                @*<label for="email_address">1、会议决策方面存在的问题（多选）：</label><span style="color:red;">*</span>
+        <div class="form-group">
+            <div class="form-line">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">euro_symbol</i>
+                    </span>
+
+                    <select id="Q1" class="form-control show-tick" multiple title="请选择...">
+                        <option value="A、会议不涉及决策（如选A，BCDE可跳过）">A、会议不涉及决策（如选A，BCDE可跳过）</option>
+                        <option value="B、会议决策点不明确">B、会议决策点不明确</option>
+                        <option value="C、决策点明确，但未做出决策">C、决策点明确，但未做出决策</option>
+                        <option value="D、通过会下沟通/报批/会签等方式即可决策，无需开会">D、通过会下沟通/报批/会签等方式即可决策，无需开会</option>
+                        <option value="E、无问题">E、无问题</option>
+                    </select>
+                </div>
+            </div>
+        </div>*@
+                                @*<label for="email_address">2、会议材料方面存在的问题（多选）：</label><span style="color:red;">*</span>
+        <div class="form-group">
+            <div class="form-line">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">euro_symbol</i>
+                    </span>
+
+                    <select id="Q2" class="form-control show-tick" multiple title="请选择...">
+                        <option value="A、材料冗长，问题暴露不充分，行动方案/资源需求不明确">A、材料冗长，问题暴露不充分，行动方案/资源需求不明确</option>
+                        <option value="B、材料未提前24小时定稿、发送">B、材料未提前24小时定稿、发送</option>
+                        <option value="C、会前议题未交圈，材料未预审">C、会前议题未交圈，材料未预审</option>
+                        <option value="D、存在参会人不提前看材料，争论基础信息的现象">D、存在参会人不提前看材料，争论基础信息的现象</option>
+                        <option value="E、无问题">E、无问题</option>
+                    </select>
+                </div>
+            </div>
+        </div>*@
+                                @*<label for="email_address">3、参会人员范围方面存在的问题（多选）：</label><span style="color:red;">*</span>
+        <div class="form-group">
+            <div class="form-line">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">euro_symbol</i>
+                    </span>
+
+                    <select id="Q3" class="form-control show-tick" multiple title="请选择...">
+                        <option value="A、未提前沟通确认，参会范围、层级不合理">A、未提前沟通确认，参会范围、层级不合理</option>
+                        <option value="B、同一部门（同一专业）超过1人参会">B、同一部门（同一专业）超过1人参会</option>
+                        <option value="C、议程安排不合理，有排队等待＞15min的情况">C、议程安排不合理，有排队等待＞15min的情况</option>
+                        <option value="D、无问题">D、无问题</option>
+                    </select>
+                </div>
+            </div>
+        </div>*@
+                                @*<label for="email_address">4、会议组织方面存在的问题（多选）：</label><span style="color:red;">*</span>
+        <div class="form-group">
+            <div class="form-line">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">euro_symbol</i>
+                    </span>
+
+                    <select id="Q4" class="form-control show-tick" multiple title="请选择...">
+                        <option value="A、会议超时＞15min ">A、会议超时＞15min </option>
+                        <option value="B、会议时间长，效率低，有较大改进空间">B、会议时间长，效率低，有较大改进空间</option>
+                        <option value="C、存在多平台重复汇报内容">C、存在多平台重复汇报内容</option>
+                        <option value="D、无问题">D、无问题</option>
+                    </select>
+                </div>
+            </div>
+        </div>*@
+                                <label for="email_address">5、其他问题<span style="font-weight:lighter">（选填）：</span></label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Q5" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <br>
+                                <button id="btnSubmit" type="button" class="btn btn-block btn-lg btn-primary waves-effect" onclick="Submit_onclick()">提交</button>
+                                @*<button id="btnSubmit" type="button" class="btn btn-block btn-lg btn-primary waves-effect" onclick="Test_onclick()">测试</button>*@
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Vertical Layout -->
+
+
+
+
+
+
+        </div>
+        <!-- #END# Multi Column -->
+
+
+
+    }
+
+    @*</div>*@
+    @*</section>*@
+
+    <script>
+        function QD_onclick(mID) {
+            window.location.href = "/HYQD/SignInQRCode?mID=" + mID;
+        }
+
+        function checkselect(objname) {
+            o = document.getElementById(objname);
+
+            var intvalue = "";
+            for (i = 0; i < o.length; i++) {
+                if (o.options[i].selected) {
+                    //intvalue += o.options[i].value + ",";
+                    intvalue += o.options[i].value + ";";
+                }
+            }
+            return intvalue.substr(0, intvalue.length - 1);
+        }
+
+
+        function Submit_onclick() {
+            //获取控件值
+            var UserName = "";
+            //var Q1 = checkselect("Q1");
+            //var Q2 = checkselect("Q2");
+            //var Q3 = checkselect("Q3");
+            //var Q4 = checkselect("Q4");
+            var Q5 = $("#Q5").val();
+
+            //A、会议不涉及决策（如选A，BCDE可跳过）;B、会议决策点不明确
+            //问题1
+            var cb1_A = $("#cb1_A").is(':checked');
+            var cb1_B = $("#cb1_B").is(':checked');
+            var cb1_C = $("#cb1_C").is(':checked');
+            var cb1_D = $("#cb1_D").is(':checked');
+            var cb1_E = $("#cb1_E").is(':checked');
+            var Q1 = "";
+            if (cb1_A == true) {
+                Q1 += "A、会议不涉及决策（如选A，BCDE可跳过）;"
+            }
+            if (cb1_B == true) {
+                Q1 += "B、会议决策点不明确;"
+            }
+            if (cb1_C == true) {
+                Q1 += "C、决策点明确，但未做出决策;"
+            }
+            if (cb1_D == true) {
+                Q1 += "D、通过会下沟通/报批/会签等方式即可决策，无需开会;"
+            }
+            if (cb1_E == true) {
+                Q1 += "E、无问题;"
+            }
+            if (Q1 != "") {
+                Q1 = Q1.substring(0, Q1.length - 1);
+            }
+            //问题2
+            var cb2_A = $("#cb2_A").is(':checked');
+            var cb2_B = $("#cb2_B").is(':checked');
+            var cb2_C = $("#cb2_C").is(':checked');
+            var cb2_D = $("#cb2_D").is(':checked');
+            var cb2_E = $("#cb2_E").is(':checked');
+            var Q2 = "";
+            if (cb2_A == true) {
+                Q2 += "A、材料冗长，问题暴露不充分，行动方案/资源需求不明确;"
+            }
+            if (cb2_B == true) {
+                Q2 += "B、材料未提前24小时定稿、发送;"
+            }
+            if (cb2_C == true) {
+                Q2 += "C、会前议题未交圈，材料未预审;"
+            }
+            if (cb2_D == true) {
+                Q2 += "D、存在参会人不提前看材料，争论基础信息的现象;"
+            }
+            if (cb2_E == true) {
+                Q2 += "E、无问题;"
+            }
+            if (Q2 != "") {
+                Q2 = Q2.substring(0, Q2.length - 1);
+            }
+            //问题3
+            var cb3_A = $("#cb3_A").is(':checked');
+            var cb3_B = $("#cb3_B").is(':checked');
+            var cb3_C = $("#cb3_C").is(':checked');
+            var cb3_D = $("#cb3_D").is(':checked');
+            var Q3 = "";
+            if (cb3_A == true) {
+                Q3 += "A、未提前沟通确认，参会范围、层级不合理;"
+            }
+            if (cb3_B == true) {
+                Q3 += "B、同一部门（同一专业）超过1人参会;"
+            }
+            if (cb3_C == true) {
+                Q3 += "C、议程安排不合理，有排队等待＞15min的情况;"
+            }
+            if (cb3_D == true) {
+                Q3 += "D、无问题;"
+            }
+            if (Q3 != "") {
+                Q3 = Q3.substring(0, Q3.length - 1);
+            }
+            //问题4
+            var cb4_A = $("#cb4_A").is(':checked');
+            var cb4_B = $("#cb4_B").is(':checked');
+            var cb4_C = $("#cb4_C").is(':checked');
+            var cb4_D = $("#cb4_D").is(':checked');
+            var Q4 = "";
+            if (cb4_A == true) {
+                Q4 += "A、会议超时＞15min ;"
+            }
+            if (cb4_B == true) {
+                Q4 += "B、会议时间长，效率低，有较大改进空间;"
+            }
+            if (cb4_C == true) {
+                Q4 += "C、存在多平台重复汇报内容;"
+            }
+            if (cb4_D == true) {
+                Q4 += "D、无问题;"
+            }
+            if (Q4 != "") {
+                Q4 = Q4.substring(0, Q4.length - 1);
+            }
+
+
+            //alert(Q1);
+            //alert(Q2);
+            //alert(Q3);
+            //alert(Q4);
+
+
+            //必填项验证
+            if (Q1 == "" || Q2 == "" || Q3 == "" || Q4 == "") {
+                alert("请填写必填项！");
+                return;
+            }
+
+            //提交
+            $.post("/HYQD/AddEndSignIn", {
+                UserName: UserName,
+                Q1: Q1,
+                Q2: Q2,
+                Q3: Q3,
+                Q4: Q4,
+                Q5: Q5
+            }, function (res) {
+                alert(res);
+                if (res == '提交成功！') {
+                    window.location.href = "/HYQD/BlankPage";
+
+                    //window.location.reload();
+                }
+            });
+            window.location.href = "/HYQD/BlankPage";
+        }
+
+        function Test_onclick() {
+            alert("1");
+            $.post("/HYQD/TestResponse", {
+
+            }, function (response) {
+                alert(response);
+           
+                });
+            window.location.href = "/HYQD/BlankPage";
+        }
+
+    </script>
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="~/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <!-- Dropzone Plugin Js -->
+    <script src="~/plugins/dropzone/dropzone.js"></script>
+    <!-- Input Mask Plugin Js -->
+    <script src="~/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <!-- Multi Select Plugin Js -->
+    <script src="~/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="~/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="~/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <!-- noUISlider Plugin Js -->
+    <script src="~/plugins/nouislider/nouislider.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="~/plugins/jquery-countto/jquery.countTo.js"></script>
+    <!-- Morris Plugin Js -->
+    <script src="~/plugins/raphael/raphael.min.js"></script>
+    <script src="~/plugins/morrisjs/morris.js"></script>
+    <!-- ChartJs -->
+    <script src="~/plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="~/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.time.js"></script>
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="~/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/index.js"></script>
+    <!-- Demo Js -->
+    <script src="~/js/demo.js"></script>
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/tables/jquery-datatable.js"></script>
+    <!-- 日期格式空间需要用到 -->
+    <script src="~/js/pages/forms/advanced-form-elements.js"></script>
+
+
+
+    <!-- Jquery Validation Plugin Css -->
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <!-- Demo Js -->
+    <script src="~/js/demo.js"></script>
+</body>
+</html>

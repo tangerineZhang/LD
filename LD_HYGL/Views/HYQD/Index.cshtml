@@ -1,0 +1,230 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>会议评价管理</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Waves Effect Css -->
+    <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="~/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="~/css/themes/all-themes.css" rel="stylesheet" />
+    <!-- JQuery DataTable Css -->
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <style>
+        .contentDiv {
+            padding: 80px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body class="theme-black">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/images/logo.png" width="140" height="40" />
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="" style="color: #ffffff; font-size: 16px;margin-left:15px;" href="index.html">|</a>
+                <a class="" style="color: #ffffff; font-weight: bold; font-size: 18px;margin-left:10px;" href="index.html">会议评价管理</a>
+                @*<a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>*@
+            </div>
+
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    @*<section class="content">*@
+    @*<div class="container-fluid">*@
+    @{
+        System.Data.DataTable dt = (System.Data.DataTable)ViewData["dsMeetingInfo"];
+        <div class="contentDiv">
+            @*<div class="block-header">
+                    <h2>FORM EXAMPLES</h2>
+                </div>*@
+            <!-- Vertical Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <i class="material-icons">cast</i> <span class="icon-name">我的会议</span>
+                            </h2>
+                           
+                            <ul class="header-dropdown m-r--5">
+                                
+                                <li class="dropdown">
+                                    <button id="btnCreateMeeting" type="button" class="btn btn-primary waves-effect" onclick="btnCreateMeeting_onclick()">
+                                        <i class="material-icons">extension</i>
+                                        <span>创建会议</span>
+                                    </button>
+                                    @*<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="/HYQD/CreateMeeting">创建会议</a></li>
+                                    </ul>*@
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>功能操作</th>
+                                            <th>会议主题</th>
+                                            <th>开始时间</th>
+                                            <th>时长</th>
+                                            <th>主持人</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (dt.Rows.Count > 0)
+                                        {
+                                            for (int i = 0; i < dt.Rows.Count; i++)
+                                            {
+                                        <tr>
+                                            <td>
+                                                <button type="button" class="btn bg-blue waves-effect" onclick="QD_onclick('@dt.Rows[i]["ID"]')">扫描二维码</button>
+                                                <button type="button" class="btn bg-blue waves-effect" onclick="Excel_onclick('@dt.Rows[i]["ID"]')">导出Excel</button>
+                                                @*@Html.ActionLink("导出Excel", "DaochuExcel", new { IDs = dt.Rows[i]["ID"] })*@
+                                                
+                                            </td>
+                                            <td>@dt.Rows[i]["Name"]</td>
+                                            <td>@dt.Rows[i]["BegTime"]</td>
+                                            <td>@dt.Rows[i]["Duration"]</td>
+                                            <td>@dt.Rows[i]["UserName"]</td>
+                                        </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- #END# Vertical Layout -->
+
+
+
+
+
+
+        </div>
+            <!-- #END# Multi Column -->
+
+
+
+    }
+
+    @*</div>*@
+    @*</section>*@
+
+
+
+
+    <script>
+        function QD_onclick(mID)
+        {
+            window.location.href = "/HYQD/SignInQRCode?mID=" + mID;
+        }
+
+        function btnCreateMeeting_onclick() {
+            window.location.href = "/HYQD/CreateMeeting";
+        }
+
+        function Excel_onclick(mID) {
+            window.location.href = "/HYQD/Excel?Ids=" + mID;
+        }
+    </script>
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/plugins/node-waves/waves.js"></script>
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="~/plugins/jquery-countto/jquery.countTo.js"></script>
+    <!-- Morris Plugin Js -->
+    <script src="~/plugins/raphael/raphael.min.js"></script>
+    <script src="~/plugins/morrisjs/morris.js"></script>
+    <!-- ChartJs -->
+    <script src="~/plugins/chartjs/Chart.bundle.js"></script>
+    <!-- Flot Charts Plugin Js -->
+    <script src="~/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="~/plugins/flot-charts/jquery.flot.time.js"></script>
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="~/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/index.js"></script>
+    <!-- Demo Js -->
+    <script src="~/js/demo.js"></script>
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/tables/jquery-datatable.js"></script>
+</body>
+</html>

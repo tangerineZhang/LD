@@ -1,0 +1,5 @@
+D:\Projects\LD_TXL\Common\bin\Release\Common.dll
+D:\Projects\LD_TXL\Common\bin\Release\Common.pdb
+D:\Projects\LD_TXL\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+D:\Projects\LD_TXL\Common\obj\Release\Common.dll
+D:\Projects\LD_TXL\Common\obj\Release\Common.pdb

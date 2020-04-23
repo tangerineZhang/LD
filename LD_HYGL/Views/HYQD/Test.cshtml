@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta name="robots" content="all" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>点击图片直接把图片地址复制到粘贴板</title>
+
+    <style type="text/css">
+        #www_jb51_net_hidden {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    点击下面的图片直接获取得地址。
+
+    <div id="jb51_net">
+
+
+        <img src="~/QRCode/e4e84192-0ee5-49d5-bd31-0b1f56ce28c0.jpg" /><br />
+
+    </div>
+
+    <span id="www_jb51_net_hidden"></span>
+    <script type="text/javascript">
+
+<!--
+
+ $id=function(id) {
+
+  return document.getElementById(id);
+
+ }
+
+ var objs =$id("jb51_net").getElementsByTagName("img") ;
+
+ for (var i=0;i<objs.length;i++ ) {
+     alert(i);
+  objs[i].onclick=function () {
+
+   $id("www_jb51_net_hidden").innerHTML=this.src ;
+
+   var my_range =document.body.createTextRange() ;
+
+   my_range.moveToElementText($id("www_jb51_net_hidden"));
+
+   my_range.execCommand("copy");
+
+   alert("图片地址已经复制到剪贴板");
+
+   return false ;
+
+  }
+
+ }
+
+//-->
+
+    </script>
+</body>
+
+
+
+</html>
+

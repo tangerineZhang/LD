@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <style>
+        .divImg {
+            /*background: red;*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .divContent {
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            color: #808080;
+            margin: 5px 0px 0px 5px;
+        }
+
+        /*.divImg img {
+                vertical-align: middle;
+            }
+
+        span {
+            height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="divImg">
+        <img src="~/QRCode/@(ViewData["mID"]).jpg" /><br />
+        <div class="divContent">
+            会议主题：@ViewData["mName"] <br />
+            主持人：@ViewData["mUser"]<br />
+            <span style="color:#0094ff">请通过企业微信扫二维码填写会后问卷</span>
+            @*<button type="button" class="btn bg-blue waves-effect" onclick="getImageData('~/QRCode/25e750c2-21b2-469a-a429-81a90c7b7896.jpg')">复制二维码</button>*@
+        </div>
+    </div>
+
+    <script>
+
+        function getImageData(img) {
+            var canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            var imgd = canvas.toDataURL("image/png");
+            return imgd;
+        }
+    </script>
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+</body>
+</html>

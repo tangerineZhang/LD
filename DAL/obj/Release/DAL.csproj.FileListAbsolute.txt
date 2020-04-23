@@ -1,0 +1,7 @@
+D:\Projects\LD_TXL\DAL\bin\Release\.SQLServerDAL.dll
+D:\Projects\LD_TXL\DAL\bin\Release\BlueThink.Comm.dll
+D:\Projects\LD_TXL\DAL\bin\Release\Common.dll
+D:\Projects\LD_TXL\DAL\bin\Release\BlueThink.Comm.pdb
+D:\Projects\LD_TXL\DAL\bin\Release\Common.pdb
+D:\Projects\LD_TXL\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\Projects\LD_TXL\DAL\obj\Release\.SQLServerDAL.dll

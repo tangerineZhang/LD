@@ -1,0 +1,9 @@
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\BlueThink.Tag.Class.dll
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\BlueThink.Tag.Class.pdb
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\BlueThink.Comm.dll
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\Newtonsoft.Json.dll
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\BlueThink.Comm.pdb
+D:\Projects\LD_TXL\BlueThink.Tag.Class\bin\Release\Newtonsoft.Json.xml
+D:\Projects\LD_TXL\BlueThink.Tag.Class\obj\Release\BlueThink.Tag.Class.csprojResolveAssemblyReference.cache
+D:\Projects\LD_TXL\BlueThink.Tag.Class\obj\Release\BlueThink.Tag.Class.dll
+D:\Projects\LD_TXL\BlueThink.Tag.Class\obj\Release\BlueThink.Tag.Class.pdb

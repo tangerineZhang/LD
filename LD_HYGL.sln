@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LD_HYGL", "LD_HYGL\LD_HYGL.csproj", "{07F7D86F-D71F-430A-B396-3799989CFE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{AB835BA2-FFD6-49CD-87B0-E216255BB32E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{985D87FF-634E-4099-86F6-4266BA86F50D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07F7D86F-D71F-430A-B396-3799989CFE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F7D86F-D71F-430A-B396-3799989CFE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F7D86F-D71F-430A-B396-3799989CFE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F7D86F-D71F-430A-B396-3799989CFE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB835BA2-FFD6-49CD-87B0-E216255BB32E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB835BA2-FFD6-49CD-87B0-E216255BB32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB835BA2-FFD6-49CD-87B0-E216255BB32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB835BA2-FFD6-49CD-87B0-E216255BB32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985D87FF-634E-4099-86F6-4266BA86F50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985D87FF-634E-4099-86F6-4266BA86F50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985D87FF-634E-4099-86F6-4266BA86F50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985D87FF-634E-4099-86F6-4266BA86F50D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
