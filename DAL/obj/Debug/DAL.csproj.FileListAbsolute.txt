@@ -65,3 +65,15 @@ D:\LD_HYGL\LD_HYGL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\LD_HYGL\LD_HYGL\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\LD_HYGL\LD_HYGL\DAL\obj\Debug\.SQLServerDAL.dll
 D:\LD_HYGL\LD_HYGL\DAL\obj\Debug\.SQLServerDAL.pdb
+D:\资料\新建文件夹\DAL\bin\Debug\.SQLServerDAL.dll
+D:\资料\新建文件夹\DAL\bin\Debug\.SQLServerDAL.pdb
+D:\资料\新建文件夹\DAL\bin\Debug\BlueThink.Comm.dll
+D:\资料\新建文件夹\DAL\bin\Debug\Common.dll
+D:\资料\新建文件夹\DAL\bin\Debug\ThoughtWorks.QRCode.dll
+D:\资料\新建文件夹\DAL\bin\Debug\Common.pdb
+D:\资料\新建文件夹\DAL\bin\Debug\BlueThink.Comm.pdb
+D:\资料\新建文件夹\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\资料\新建文件夹\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\资料\新建文件夹\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\资料\新建文件夹\DAL\obj\Debug\.SQLServerDAL.dll
+D:\资料\新建文件夹\DAL\obj\Debug\.SQLServerDAL.pdb
